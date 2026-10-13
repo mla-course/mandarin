@@ -1,0 +1,32 @@
+{:paths ["src" "resources"]
+
+ :deps
+ {org.clojure/clojure {:mvn/version "1.12.7"}
+  com.hankcs/hanlp {:mvn/version "portable-1.8.6"}}
+
+ :aliases
+ {:test-paths
+  {:extra-paths ["test"]
+   :jvm-opts ["-Dfile.encoding=UTF-8"]}
+
+  :test
+  {:extra-paths ["test"]
+   :jvm-opts ["-Dfile.encoding=UTF-8"]
+   :main-opts ["-m" "mla.mandarin-test"]}
+
+  :lint
+  {:extra-deps
+   {clj-kondo/clj-kondo {:mvn/version "2026.10.26"}}
+   :main-opts ["-m" "clj-kondo.main"]}
+
+  :repl
+  {:jvm-opts ["-Dfile.encoding=UTF-8"]
+   :main-opts ["-r"]}
+
+  :cider
+  {:extra-deps
+   {cider/cider-nrepl {:mvn/version "0.64.1"}}
+   :jvm-opts ["-Dfile.encoding=UTF-8"]
+   :main-opts
+   ["-m" "nrepl.cmdline"
+    "--middleware" "[cider.nrepl/cider-middleware]"]}}}

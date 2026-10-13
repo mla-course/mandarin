@@ -1,0 +1,42 @@
+# Clojure CLI / tools.deps
+.cpcache/
+.lsp/
+.clj-kondo/.cache/
+target/
+
+# Compiled JVM artifacts
+*.class
+*.jar
+*.war
+
+# Logs and temporary files
+*.log
+*.tmp
+.tmp/
+temp/
+
+# Java crash dumps
+hs_err_pid*
+replay_pid*
+
+# Emacs
+*~
+\#*\#
+.\#*
+auto-save-list/
+tramp
+
+# Environment-specific configuration
+.env
+.env.*
+!.env.example
+
+.nrepl-port
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Scratchpad
+
+scratch.org

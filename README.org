@@ -1,0 +1,79 @@
+#+TITLE: Mandarin Chinese Text Segmentation with Hanyu Pinyin
+
+* Overview
+
+A Clojure library for hierarchical Mandarin Chinese text segmentation
+with Hanyu Pinyin annotations.
+
+The library analyzes Chinese text into sentences, words, and Unicode
+characters, with corresponding pinyin annotations at each level.
+
+* Requirements
+
+- Java 21 or newer, https://openjdk.org/ GPL-2.0
+- Clojure 1.12.7, https://clojure.org/ EPL-1.0
+- HanLP portable 1.8.6, https://github.com/hankcs/HanLP Apache-2.0
+  https://github.com/cpeixin/HanLP
+
+* Quick Start
+
+Require the library:
+
+#+begin_src clojure
+(require '[mla.mandarin :as mandarin])
+
+(def result
+  (mandarin/analyze "你好！你今天好吗？"))
+
+(:sentences result)
+#+end_src
+
+Retrieve words:
+
+#+begin_src clojure
+(mandarin/words "我喜欢中文。")
+#+end_src
+
+Retrieve characters:
+
+#+begin_src clojure
+(mandarin/characters "你好。")
+#+end_src
+
+* Development
+
+** Run Tests
+
+#+begin_src sh
+clj -M:test
+#+end_src
+
+Alternatively, use the Makefile:
+
+#+begin_src sh
+make test
+#+end_src
+
+** Run the Linter
+
+#+begin_src sh
+make lint
+#+end_src
+
+** Run All Checks
+
+#+begin_src sh
+make check
+#+end_src
+
+** Start a REPL
+
+#+begin_src sh
+clj -M:repl
+#+end_src
+
+* Contribute
+
+- Send a [[mailto:nospam.keram@gmail.com][bug report]] with =[BUG] mla-course/mandarin: <SHORT EXPLICIT BUG DESCRIPTION>=
+- Send a [[mailto:nospam.keram@gmail.com][patch]] with =[PATCH] mla-course/mandarin: <COMMIT SUMMARY>=
+- Share any [[mailto:nospam.keram@gmail.com][other question or idea]]
